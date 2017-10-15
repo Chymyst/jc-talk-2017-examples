@@ -37,4 +37,30 @@ class CounterSpec extends FlatSpec with Matchers {
     println(s"Elapsed $elapsed ms")
   }
 
+  it should "work when implemented in a local scope" in {
+    val n = 10000
+
+    val (decr, get) = makeCounter(n)
+
+    (1 to n).foreach(_ ⇒ decr())
+
+    Thread.sleep(1000) // Give it some time.
+
+    get() shouldEqual 0
+  }
+
+  def makeCounter(initCount: Int): (M[Unit], B[Unit, Int]) = {
+    val c = m[Int]
+    val decr = m[Unit]
+    val get = b[Unit, Int]
+
+    site(
+      go { case c(x) + decr(_) ⇒ c(x - 1) },
+      go { case c(x) + get(_, reply) ⇒ reply(x) }
+    )
+
+    c(initCount)
+    (decr, get)
+  }
+
 }
