@@ -34,11 +34,11 @@ object DiningPhilosophers extends App {
   val f51 = m[Unit]
 
   site(
-    go { case t1(_) ⇒ eat(1); h1() },
-    go { case t2(_) ⇒ eat(2); h2() },
-    go { case t3(_) ⇒ eat(3); h3() },
-    go { case t4(_) ⇒ eat(4); h4() },
-    go { case t5(_) ⇒ eat(5); h5() },
+    go { case t1(_) ⇒ think(1); h1() },
+    go { case t2(_) ⇒ think(2); h2() },
+    go { case t3(_) ⇒ think(3); h3() },
+    go { case t4(_) ⇒ think(4); h4() },
+    go { case t5(_) ⇒ think(5); h5() },
 
     go { case h1(_) + f12(_) + f51(_) ⇒ eat(1); t1() + f12() + f51() },
     go { case h2(_) + f23(_) + f12(_) ⇒ eat(2); t2() + f23() + f12() },
