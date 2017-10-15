@@ -5,7 +5,8 @@ import io.chymyst.jc._
 object DiningPhilosophers extends App {
 
   def randomWait(message: String): Unit = {
-    Thread.sleep(math.floor(scala.util.Random.nextDouble * 20.0 + 2.0).toLong)
+    println(message)
+    Thread.sleep(math.floor(scala.util.Random.nextDouble * 500.0 + 200.0).toLong)
   }
 
   def eat(philosopher: Int): Unit = {
@@ -33,17 +34,17 @@ object DiningPhilosophers extends App {
   val f51 = m[Unit]
 
   site(
-    go { case t1(_) ⇒ wait(); h1() },
-    go { case t2(_) ⇒ wait(); h2() },
-    go { case t3(_) ⇒ wait(); h3() },
-    go { case t4(_) ⇒ wait(); h4() },
-    go { case t5(_) ⇒ wait(); h5() },
+    go { case t1(_) ⇒ eat(1); h1() },
+    go { case t2(_) ⇒ eat(2); h2() },
+    go { case t3(_) ⇒ eat(3); h3() },
+    go { case t4(_) ⇒ eat(4); h4() },
+    go { case t5(_) ⇒ eat(5); h5() },
 
-    go { case h1(_) + f12(_) + f51(_) ⇒ wait(); t1() + f12() + f51() },
-    go { case h2(_) + f23(_) + f12(_) ⇒ wait(); t2() + f23() + f12() },
-    go { case h3(_) + f34(_) + f23(_) ⇒ wait(); t3() + f34() + f23() },
-    go { case h4(_) + f45(_) + f34(_) ⇒ wait(); t4() + f45() + f34() },
-    go { case h5(_) + f51(_) + f45(_) ⇒ wait(); t5() + f51() + f45() }
+    go { case h1(_) + f12(_) + f51(_) ⇒ eat(1); t1() + f12() + f51() },
+    go { case h2(_) + f23(_) + f12(_) ⇒ eat(2); t2() + f23() + f12() },
+    go { case h3(_) + f34(_) + f23(_) ⇒ eat(3); t3() + f34() + f23() },
+    go { case h4(_) + f45(_) + f34(_) ⇒ eat(4); t4() + f45() + f34() },
+    go { case h5(_) + f51(_) + f45(_) ⇒ eat(5); t5() + f51() + f45() }
   )
   t1() + t2() + t3() + t4() + t5()
   f12() + f23() + f34() + f45() + f51()
