@@ -4,8 +4,8 @@ import io.chymyst.jc._
 import org.scalatest.{FlatSpec, Matchers}
 
 class FutureSpec extends FlatSpec with Matchers {
-  behavior of "future"
 
+  behavior of "future"
 
   def futureOf[T](f: ⇒ T): B[Unit, T] = {
     val get = b[Unit, T]
