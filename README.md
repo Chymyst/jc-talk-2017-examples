@@ -1,5 +1,6 @@
-# jc-talk-2017-examples
-Code examples for the Chymyst presentations in 2017
+# Overview
+
+This repository contains the code examples for my `Chymyst` presentations in 2017.
 
 ## Presentation for [Scale by the Bay 2017](https://scalebythebay2017.sched.com/)
 
