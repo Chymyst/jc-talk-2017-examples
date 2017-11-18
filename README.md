@@ -4,13 +4,13 @@ This repository contains the code examples for my `Chymyst` presentations in 201
 
 ## Presentation for [Scale by the Bay 2017](https://scalebythebay2017.sched.com/)
 
-[Talk slides](https://github.com/winitzki/talks/blob/master/join_calculus/join_calculus_2017_SBTB.pdf)
+[Talk slides in PDF](https://github.com/winitzki/talks/blob/master/join_calculus/join_calculus_2017_SBTB.pdf)
 
 ## Presentation for the [Scala Bay meetup](https://www.meetup.com/Scala-Bay/events/243931229/)
 
-[Video of the presentation](https://www.youtube.com/watch?v=Iu2KBYNF-6M)
+[Video of the slides + audio with Q & A](https://www.youtube.com/watch?v=Iu2KBYNF-6M)
 
-[Talk slides](https://github.com/winitzki/talks/blob/master/join_calculus/join_calculus_2017_Scala_Bay.pdf)
+[Talk slides in PDF](https://github.com/winitzki/talks/blob/master/join_calculus/join_calculus_2017_Scala_Bay.pdf)
 
 # Main repository
 
