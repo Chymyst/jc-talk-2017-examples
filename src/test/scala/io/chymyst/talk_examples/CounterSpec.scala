@@ -18,7 +18,7 @@ class CounterSpec extends FlatSpec with Matchers {
 
     site(
       go { case finished(_) + get(_, reply) ⇒ reply("done") },
-      go { case c(x) + decr(_) ⇒ if (x > 0) c(x - 1) },
+      go { case c(x) + decr(_) if x > 0 ⇒ c(x - 1) },
       go { case c(0) ⇒ finished() }
     )
 
