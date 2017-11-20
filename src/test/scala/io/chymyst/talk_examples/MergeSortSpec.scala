@@ -53,6 +53,11 @@ class MergeSortSpec extends FlatSpec with Matchers {
     arrayMerge(Array(1, 2, 5), Array(3, 6)).toSeq shouldEqual Seq(1, 2, 3, 5, 6)
   }
 
+  it should "fail to run livelock" in {
+    val cc = m[Int]
+    val r = go { case cc(x) => cc(x+1) }
+  }
+
   it should "sort an array using concurrent merge-sort correctly" in {
 
     val count = 10
